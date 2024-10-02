@@ -1,6 +1,13 @@
 # Uninstall
 rustup self uninstall
 
+yarn remove "@orca-so/whirlpools-sdk"
+yarn remove "@orca-so/common-sdk"
+yarn remove "@coral-xyz/anchor@0.29.0"
+yarn remove "@solana/web3.js"
+yarn remove "@solana/spl-token"
+yarn remove "decimal.js"
+
 sudo apt-get update && \
 sudo apt-get install -y \
     build-essential \
@@ -12,8 +19,8 @@ sudo apt-get install -y \
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 . "$HOME/.cargo/env"
-#export PATH=$PATH:$HOME/.cargo/bin
-#source ~/.bashrc
+export PATH=$PATH:$HOME/.cargo/bin
+source ~/.bashrc
 rustup default 1.79.0
 rustc --version
 
@@ -44,6 +51,34 @@ nvm install node
 node --version
 npm install --global yarn
 yarn --version
+
+# Check Solana config
+solana config get
+
+# Install Typescript via npm
+#npm install -D typescript
+
+# Update the Solana CLI cluster using the following commands:
+
+# solana config set --url mainnet-beta
+# solana config set --url devnet
+# solana config set --url localhost
+# solana config set --url testnet
+
+# Or use the following short options:
+
+# solana config set -um    # For mainnet-beta
+# solana config set -ud    # For devnet
+# solana config set -ul    # For localhost
+# solana config set -ut    # For testnet
+
+solana config set --url localhost
+
+# Create Solana Wallet
+solana-keygen new
+
+
+yarn add "fastestsmallesttextencoderdecoder@^1.0.22"
 
 # Install ORCA software stack
 yarn add "@orca-so/whirlpools-sdk"
