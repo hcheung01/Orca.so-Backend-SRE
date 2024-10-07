@@ -64,7 +64,7 @@ solana config get
 
 # solana config set --url mainnet-beta
 # solana config set --url devnet
-solana config set --url localhost
+# solana config set --url localhost
 # solana config set --url testnet
 
 # Or use the following short options:
@@ -74,15 +74,27 @@ solana config set --url localhost
 # solana config set -ul    # For localhost
 # solana config set -ut    # For testnet
 
+# Create Wallet
 solana-keygen new
 
+# Check address
 solana address
+
+# Set cluster to localhost node
 
 # solana config set -ud
 # solana airdrop 2
 # solana balance
 
-solana-test-validator
+# Create test validator node (run with 2nd terminal)
+sudo chmod +x setup_local_validator.sh
+./setup_local_validator_node.sh
+
+solana config set -ul
+solana airdrop 10
+solana balance
+
+
 
 
 yarn add "fastestsmallesttextencoderdecoder@^1.0.22"
