@@ -1,2 +1,5 @@
-node_modules/
-scripts/passkey
+**/node_modules/
+**/passkey
+**/validator/
+**/test-ledger/
+**/venv/
