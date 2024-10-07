@@ -2,9 +2,9 @@
   "dependencies": {
     "@coral-xyz/anchor": "0.29.0",
     "@orca-so/common-sdk": "^0.6.3",
-    "@orca-so/whirlpools-sdk": "^0.13.5",
+    "@orca-so/whirlpools-sdk": "^0.13.6",
     "@solana/spl-token": "^0.4.8",
-    "@solana/web3.js": "^1.95.3",
+    "@solana/web3.js": "^2.0.0-rc.1",
     "decimal.js": "^10.4.3",
     "fastestsmallesttextencoderdecoder": "^1.0.22",
     "typescript": "^5.6.2"
