@@ -9,11 +9,15 @@ yarn remove "@solana/spl-token"
 yarn remove "decimal.js"
 
 sudo apt-get update && \
+sudo apt-get upgrade && \
 sudo apt-get install -y \
     build-essential \
     pkg-config \
-    libudev-dev llvm libclang-dev \
-    protobuf-compiler libssl-dev
+    libudev-dev \
+    llvm \
+    libclang-dev \
+    protobuf-compiler \
+    libssl-dev
 
 # Install Rust
 # https://www.rust-lang.org/tools/install
@@ -36,8 +40,10 @@ agave-install update
 # https://book.anchor-lang.com/getting_started/installation.html
 
 cargo install --git https://github.com/coral-xyz/anchor avm --force
-avm install 0.30.1
-avm use 0.30.1
+#avm install 0.30.1
+#avm use 0.30.1
+avm install latest
+avm use latest
 echo 'export "PATH=$HOME/.avm/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 source ~/.bashrc
 avm --version
@@ -53,11 +59,9 @@ yarn --version
 
 
 
-# Install Typescript via npm
-#npm install -D typescript
 
 # Setup Solana
-
+cargo install solana-verify
 solana config get
 
 # Update the Solana CLI cluster using the following commands:
@@ -74,28 +78,16 @@ solana config get
 # solana config set -ul    # For localhost
 # solana config set -ut    # For testnet
 
-# Create Wallet
-solana-keygen new
 
-# Check address
-solana address
-
-# Set cluster to localhost node
-
-# solana config set -ud
-# solana airdrop 2
-# solana balance
 
 # Create test validator node (run with 2nd terminal)
 sudo chmod +x setup_local_validator.sh
 ./setup_local_validator_node.sh
+./generate_keys.sh
 
-solana config set -ul
-solana airdrop 10
-solana balance
-
-
-
+# solana config set -ul
+# solana airdrop 10
+# solana balance
 
 yarn add "fastestsmallesttextencoderdecoder@^1.0.22"
 
