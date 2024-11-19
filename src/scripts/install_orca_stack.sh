@@ -49,16 +49,13 @@ source ~/.bashrc
 avm --version
 anchor --version
 
-# Intall Node Version Manager, Node.js and Yarn
+# Install Node Version Manager, Node.js and Yarn
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 command -v nvm
 nvm install node
 node --version
 npm install --global yarn
 yarn --version
-
-
-
 
 # Setup Solana
 cargo install solana-verify
@@ -77,8 +74,6 @@ solana config get
 # solana config set -ud    # For devnet
 # solana config set -ul    # For localhost
 # solana config set -ut    # For testnet
-
-
 
 # Create test validator node (run with 2nd terminal)
 sudo chmod +x setup_local_validator.sh
@@ -102,3 +97,7 @@ yarn add "decimal.js"
 touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules && git add .gitignore
 git config advice.addIgnoredFile false
 git status
+
+# Tools
+npm install -g ts-node
+cargo install evcxr_repl
